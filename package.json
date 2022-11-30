@@ -41,5 +41,11 @@
   },
   "devDependencies": {
     "jest": "^27.5.1"
+  },
+  "Options":{
+    "jest": {
+      "preset": "@vue/cli-plugin-unit-jest",
+      "transformIgnorePatterns": ["node_modules\/(?!axios)"]
+    }
   }
 }
