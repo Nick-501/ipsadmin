@@ -1,15 +1,29 @@
-  image: docker-adminfe:latest
-  
-  services:
-    - docker:dind
-  
-  before_script:
-     - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" 
-  
-  # should be cmd, not script
-  script:
-    - echo "start building container..."
-    # - "docker info"
-    - "docker build -t docker-adminfe ."
-    # - "docker login $DOCKER_USERNAME"  #$DOCKER_PASSWORD
-    - "docker push docker-adminfe"
+name: Node.js CI
+
+env:
+
+  CI: false
+
+on:
+  push:
+    branches: [ "Main" ]
+  pull_request:
+    branches: [ "Main" ]
+
+jobs:
+  dockerize_job:
+    image: docker-adminfe:latest
+    
+    services:
+      - docker:dind
+    
+    before_script:
+      - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" 
+    
+    # should be cmd, not script
+    script:
+      - echo "start building container..."
+      # - "docker info"
+      - "docker build -t docker-adminfe ."
+      # - "docker login $DOCKER_USERNAME"  #$DOCKER_PASSWORD
+      - "docker push docker-adminfe"
