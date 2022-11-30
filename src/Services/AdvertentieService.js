@@ -10,7 +10,7 @@ class AdvertentieService{
     }
 
     getAdvertentieById(advertentieId){
-        return axios.get("http://localhost:8081/api/v1/advertentie/" + advertentieId)
+        return axios.get(ADVERTENTIE_API_BASE_URL + '/' + advertentieId)
     }
 
     deleteAdvertentie(advertentieId){
