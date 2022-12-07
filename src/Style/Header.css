@@ -1,13 +1,12 @@
 #header {
     background-color: rgb(255, 0, 0);
-    border-top: 8px solid #ffffff;
 }
 
 
 .text-header {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 .text-header:hover,.text-lightblue:focus{
-    color:#0d6efd;
+    color:#000000;
 }
